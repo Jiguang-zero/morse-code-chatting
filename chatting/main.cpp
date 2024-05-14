@@ -2,30 +2,20 @@
 // Created by 86158 on 2024/5/13.
 //
 
-#include <iostream>
+#include <conio.h>
+#include <cstdio>
+#include "morse_tree/MorseCodeTree.h"
 
-using namespace std;
+using namespace morse_code_chatting;
 
 int main() {
-    string ans;
-    char ch = '.';
+    auto * tree = morse_tree::MorseCodeTree::New();
 
-    auto changeCh = [&ch]() {
-        ch = (ch == '.') ? '-' : '.';
-    };
-
-    for (int i = 0; i < 30; i ++ ) {
-        char a;
-        cin >> a;
-
-        if (a != '0') {
-            ans += string(1, a);
-            ans += "((\"" + string(1, ch) + string(1, a) + "\"))\n";
-        }
-
-
-        changeCh();
+    int ch;
+    while ((ch = getch()) != ' ') {
+        system("cls");
+        putchar(tree->move((char)ch));
     }
 
-    cout << ans;
+
 }

@@ -10,4 +10,12 @@ add_executable(morseCodeChatting main.cpp
         utils/myDate.h
         utils/myDate.cpp
         morse_tree/MorseCodeTree.cpp
-        morse_tree/MorseCodeTree.h)
+        morse_tree/MorseCodeTree.h
+        network/client.h
+        input/Input.cpp
+        input/Input.h
+)
+target_link_libraries(morseCodeChatting ws2_32.lib)
+
+add_executable(morseCodeChattingServer network/server.cpp)
+target_link_libraries(morseCodeChattingServer ws2_32.lib)

@@ -72,10 +72,10 @@ namespace morse_code_chatting::morse_tree {
         // constructor function, private
         MorseCodeTree();
 
-        void initTheTree();
-
 
     public:
+        void initTheTree();
+
         char move(char flag) {
             // init the root
             if (flag != '.' && flag != '-') {
